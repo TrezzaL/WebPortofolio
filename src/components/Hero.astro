@@ -1,0 +1,219 @@
+---
+// Hero Section - Immersive Modern Glassmorphism
+---
+
+<section class="hero-container relative pt-36 pb-20 md:pt-44 md:pb-32 overflow-hidden flex flex-col items-center justify-center min-h-[90vh]">
+  
+  <!-- 1. AMBIENT MOUSE PARALLAX AURA (Cahaya di Balik Teks Utama) -->
+  <div 
+    id="hero-aura-1"
+    class="pointer-events-none absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] sm:w-[600px] h-[350px] sm:h-[600px] bg-gradient-to-tr from-cyan-500/20 via-sky-400/15 to-blue-600/10 rounded-full blur-[120px] transition-transform duration-300 ease-out -z-10"
+  ></div>
+  <div 
+    id="hero-aura-2"
+    class="pointer-events-none absolute top-1/2 right-1/4 w-[280px] sm:w-[450px] h-[280px] sm:h-[450px] bg-indigo-500/10 rounded-full blur-[100px] transition-transform duration-500 ease-out -z-10"
+  ></div>
+
+  <!-- Ornamen Grid Siber Presisi -->
+  <div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none -z-10"></div>
+
+  <div class="max-w-4xl mx-auto px-6 text-center relative z-10 flex flex-col items-center">
+    
+    <!-- 2. LIVE STATUS BADGE (PULSING PING INDICATOR) -->
+    <div class="hero-badge opacity-0 translate-y-4 inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-zinc-900/80 border border-zinc-800/90 backdrop-blur-xl text-xs font-semibold text-zinc-300 mb-8 shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:border-emerald-500/40 transition-colors">
+      <span class="relative flex h-2 w-2">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-400 shadow-[0_0_8px_#34d399]"></span>
+      </span>
+      <span data-id="Tersedia untuk Proyek & Kolaborasi" data-en="Available for Projects & Collaboration">
+        Tersedia untuk Proyek & Kolaborasi
+      </span>
+    </div>
+
+    <!-- 3. HEADLINE UTAMA (DYNAMIC GRADIENT & DUAL-FOCUS REVEAL) -->
+    <h1 class="hero-title opacity-0 translate-y-6 text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white mb-6 leading-[1.12]">
+      <span data-id="Membangun Solusi Digital &" data-en="Building Digital Solutions &">Membangun Solusi Digital &</span> <br class="hidden sm:block" />
+      <span class="inline-block relative">
+        <span class="bg-gradient-to-r from-cyan-400 via-sky-300 via-blue-500 to-indigo-500 bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-flow filter drop-shadow-[0_0_35px_rgba(34,211,238,0.25)]">
+          <span data-id="Visual yang Berdampak" data-en="Impactful Visuals">Visual yang Berdampak</span>
+        </span>
+      </span>
+    </h1>
+
+    <!-- 4. SUBTITLE & DYNAMIC ROLE TYPEWRITER -->
+    <div class="hero-desc opacity-0 translate-y-6 max-w-2xl mx-auto mb-10 space-y-3">
+      <!-- Dynamic Rotating Words -->
+      <div class="flex items-center justify-center gap-2 text-xs sm:text-sm font-mono text-cyan-400">
+        <span class="text-zinc-500">&gt;</span>
+        <span class="text-zinc-400" data-id="Fokus Utama:" data-en="Core Focus:">Fokus Utama:</span>
+        <span id="role-typewriter" class="font-bold text-white border-b border-cyan-400 pb-0.5"></span>
+        <span class="inline-block w-1.5 h-4 bg-cyan-400 animate-pulse ml-0.5"></span>
+      </div>
+
+      <p 
+        class="text-base sm:text-lg text-zinc-400 leading-relaxed font-normal"
+        data-id="Halo, aku <strong class='text-zinc-100 font-semibold'>Choirul Rizal</strong>. Pengembang perangkat lunak dan kreator konten yang mengintegrasikan rekayasa sistem berkinerja tinggi dengan visual sinematik modern."
+        data-en="Hi, I am <strong class='text-zinc-100 font-semibold'>Choirul Rizal</strong>. A software engineer and content creator integrating high-performance system engineering with modern cinematic visuals."
+      >
+        Halo, aku <strong class="text-zinc-100 font-semibold">Choirul Rizal</strong>. Pengembang perangkat lunak dan kreator konten yang mengintegrasikan rekayasa sistem berkinerja tinggi dengan visual sinematik modern.
+      </p>
+    </div>
+
+    <!-- 5. CALL TO ACTION (CTA) DENGAN MICRO-INTERACTION PREMIUM -->
+    <div class="hero-cta opacity-0 translate-y-6 flex flex-wrap items-center justify-center gap-4">
+      
+      <!-- Tombol Utama: Moving Gradient Glow & Arrow Nudge -->
+      <a 
+        href="#showcase"
+        class="group/btn relative px-7 py-3.5 rounded-2xl bg-gradient-to-r from-cyan-500 via-sky-500 to-blue-600 text-white font-bold text-sm tracking-wide overflow-hidden shadow-[0_0_25px_rgba(6,182,212,0.35)] hover:shadow-[0_0_40px_rgba(6,182,212,0.65)] hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 flex items-center gap-2.5"
+      >
+        <!-- Shimmer Flare Layer -->
+        <div class="absolute inset-0 -translate-x-full group-hover/btn:translate-x-full duration-1000 bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform ease-out pointer-events-none"></div>
+        
+        <span data-id="Eksplor Karya" data-en="Explore Works">Eksplor Karya</span>
+        <svg class="w-4 h-4 group-hover/btn:translate-x-1.5 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+        </svg>
+      </a>
+
+      <!-- Tombol Sekunder: Glowing Border & Smooth Contrast -->
+      <a 
+        href="#contact"
+        class="group/sec relative px-7 py-3.5 rounded-2xl bg-zinc-950/70 hover:bg-zinc-900 border border-zinc-800 hover:border-cyan-400/60 text-zinc-300 hover:text-white font-bold text-sm tracking-wide backdrop-blur-xl hover:shadow-[0_0_25px_rgba(34,211,238,0.15)] hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 flex items-center gap-2"
+      >
+        <span data-id="Hubungi Saya" data-en="Contact Me">Hubungi Saya</span>
+        <span class="text-zinc-500 group-hover/sec:text-cyan-400 group-hover/sec:translate-x-0.5 transition-all duration-200">&rarr;</span>
+      </a>
+
+    </div>
+
+    <!-- 6. MINI TECH PILLS (QUICK HIGHLIGHTS) -->
+    <div class="hero-tech opacity-0 translate-y-4 mt-14 pt-8 border-t border-zinc-800/40 flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-xs text-zinc-400">
+      <span class="font-mono text-[11px] text-zinc-400 mr-1" data-id="Tech Highlight:" data-en="Tech Highlights:">Tech Highlight:</span>
+      <span class="px-2.5 py-1 rounded-lg bg-zinc-900/60 border border-zinc-800/80 font-mono text-[11px] text-zinc-300 hover:border-cyan-500/40 transition-colors">Laravel</span>
+      <span class="px-2.5 py-1 rounded-lg bg-zinc-900/60 border border-zinc-800/80 font-mono text-[11px] text-zinc-300 hover:border-cyan-500/40 transition-colors">C# .NET</span>
+      <span class="px-2.5 py-1 rounded-lg bg-zinc-900/60 border border-zinc-800/80 font-mono text-[11px] text-zinc-300 hover:border-cyan-500/40 transition-colors">Kotlin</span>
+      <span class="px-2.5 py-1 rounded-lg bg-zinc-900/60 border border-zinc-800/80 font-mono text-[11px] text-zinc-300 hover:border-cyan-500/40 transition-colors">Premiere Pro</span>
+      <span class="px-2.5 py-1 rounded-lg bg-zinc-900/60 border border-zinc-800/80 font-mono text-[11px] text-zinc-300 hover:border-cyan-500/40 transition-colors">Blender 3D</span>
+    </div>
+
+  </div>
+
+  <!-- Scroll Down Indicator Minimalis -->
+  <a 
+    href="#about"
+    class="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-zinc-500 hover:text-cyan-400 transition-colors group cursor-pointer"
+    aria-label="Scroll Down"
+  >
+    <span class="text-[10px] font-mono tracking-widest uppercase opacity-70 group-hover:opacity-100 transition-opacity">Scroll</span>
+    <div class="w-5 h-8 rounded-full border border-zinc-800 group-hover:border-cyan-400/50 flex justify-center pt-1.5 transition-colors">
+      <div class="w-1 h-2 rounded-full bg-cyan-400 animate-bounce"></div>
+    </div>
+  </a>
+
+</section>
+
+<!-- SCRIPT UX: STAGGER REVEAL, MOUSE PARALLAX & TYPEWRITER -->
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    // --- 1. ENTRANCE STAGGER REVEAL ANIMATION ---
+    const badge = document.querySelector('.hero-badge');
+    const title = document.querySelector('.hero-title');
+    const desc = document.querySelector('.hero-desc');
+    const cta = document.querySelector('.hero-cta');
+    const tech = document.querySelector('.hero-tech');
+
+    const elements = [badge, title, desc, cta, tech];
+
+    elements.forEach((el, idx) => {
+      if (el) {
+        setTimeout(() => {
+          el.style.transition = 'opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)';
+          el.classList.remove('opacity-0', 'translate-y-4', 'translate-y-6');
+          el.classList.add('opacity-100', 'translate-y-0');
+        }, 120 * idx + 200);
+      }
+    });
+
+    // --- 2. INTERACTIVE MOUSE PARALLAX AURA ---
+    const aura1 = document.getElementById('hero-aura-1');
+    const aura2 = document.getElementById('hero-aura-2');
+
+    window.addEventListener('mousemove', (e) => {
+      const { clientX, clientY } = e;
+      const xOffset = (clientX - window.innerWidth / 2) * 0.04;
+      const yOffset = (clientY - window.innerHeight / 2) * 0.04;
+
+      if (aura1) {
+        aura1.style.transform = `translate(calc(-50% + ${xOffset}px), calc(-50% + ${yOffset}px))`;
+      }
+      if (aura2) {
+        aura2.style.transform = `translate(${-xOffset * 1.5}px, ${-yOffset * 1.5}px)`;
+      }
+    });
+
+    // --- 3. DYNAMIC ROLE TYPEWRITER ENGINE ---
+    const typewriterEl = document.getElementById('role-typewriter');
+    const rolesId = [
+      'Full-Stack Web Developer',
+      'C# Desktop System Architect',
+      'Android Mobile Developer',
+      'Dynamic Video Post-Editor',
+      '3D Simulation Artist'
+    ];
+    const rolesEn = [
+      'Full-Stack Web Developer',
+      'C# Desktop System Architect',
+      'Android Mobile Developer',
+      'High-Pace Video Editor',
+      '3D Simulation Artist'
+    ];
+
+    let roleIdx = 0;
+    let charIdx = 0;
+    let isDeleting = false;
+    let waitTime = 1800;
+
+    function typeRoles() {
+      const isEnglish = document.documentElement.classList.contains('lang-en') || localStorage.getItem('portfolio-lang') === 'en';
+      const currentList = isEnglish ? rolesEn : rolesId;
+      const currentRole = currentList[roleIdx % currentList.length];
+
+      if (isDeleting) {
+        typewriterEl.textContent = currentRole.substring(0, charIdx - 1);
+        charIdx--;
+      } else {
+        typewriterEl.textContent = currentRole.substring(0, charIdx + 1);
+        charIdx++;
+      }
+
+      let speed = isDeleting ? 40 : 80;
+
+      if (!isDeleting && charIdx === currentRole.length) {
+        speed = waitTime;
+        isDeleting = true;
+      } else if (isDeleting && charIdx === 0) {
+        isDeleting = false;
+        roleIdx++;
+        speed = 400;
+      }
+
+      setTimeout(typeRoles, speed);
+    }
+
+    if (typewriterEl) typeRoles();
+  });
+</script>
+
+<style>
+  /* Animasi gradasi mengalir pada teks utama */
+  @keyframes gradient-flow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .animate-gradient-flow {
+    animation: gradient-flow 6s ease infinite;
+  }
+</style>

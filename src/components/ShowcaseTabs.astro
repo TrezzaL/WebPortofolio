@@ -1,0 +1,264 @@
+---
+import ProjectCard from './ProjectCard.astro';
+import VideoCard from './VideoCard.astro';
+
+interface Props {
+  codingProjects: any[];
+  editingVideos: any[];
+}
+
+const { codingProjects, editingVideos } = Astro.props;
+---
+
+<section id="showcase" class="py-24 max-w-6xl mx-auto px-6 relative overflow-hidden">
+  
+  <!-- Subtle Ambient Glow -->
+  <div class="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-cyan-500/10 rounded-full blur-[140px] pointer-events-none -z-10"></div>
+  <div class="absolute top-1/3 right-1/4 -translate-y-1/2 w-80 h-80 bg-blue-600/10 rounded-full blur-[120px] pointer-events-none -z-10"></div>
+
+  <!-- SECTION HEADER & SLIDING TAB SWITCHER -->
+  <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+    <div class="space-y-2">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-semibold">
+        <span>🚀</span>
+        <span data-id="Portofolio Pilihan" data-en="Featured Portfolio">Portofolio Pilihan</span>
+      </div>
+      <h2 
+        class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white leading-tight"
+        data-id="Showcase Karya & Eksplorasi"
+        data-en="Featured Works & Explorations"
+      >
+        Showcase Karya & Eksplorasi
+      </h2>
+      <p 
+        class="text-sm text-zinc-400 max-w-lg"
+        data-id="Jelajahi portofolio rekayasa perangkat lunak dan karya video sinematik vertikal."
+        data-en="Explore the software engineering portfolio and vertical cinematic video creations."
+      >
+        Jelajahi portofolio rekayasa perangkat lunak dan karya video sinematik vertikal.
+      </p>
+    </div>
+
+    <!-- 1. SLIDING PILL TAB CONTROLLER -->
+    <div class="relative p-1.5 rounded-2xl bg-zinc-950/80 border border-zinc-800/90 backdrop-blur-xl inline-flex items-center shadow-lg self-start md:self-auto">
+      
+      <!-- Sliding Active Capsule Indicator (Animasi Meluncur) -->
+      <div 
+        id="tab-slider-pill" 
+        class="absolute top-1.5 bottom-1.5 left-1.5 rounded-xl bg-gradient-to-r from-cyan-500/20 via-sky-500/15 to-blue-600/20 border border-cyan-500/40 shadow-[0_0_15px_rgba(6,182,212,0.25)] transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] pointer-events-none"
+      ></div>
+
+      <!-- Tab Button: Coding -->
+      <button 
+        id="tab-coding-btn" 
+        type="button"
+        class="tab-btn relative z-10 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-white transition-colors duration-200 flex items-center gap-2"
+      >
+        <span>💻</span>
+        <span data-id="Coding" data-en="Coding">Coding</span>
+        <span class="px-2 py-0.5 rounded-full text-[10px] font-mono bg-zinc-900 border border-zinc-800 text-cyan-400">
+          {codingProjects.length}
+        </span>
+      </button>
+
+      <!-- Tab Button: Editing -->
+      <button 
+        id="tab-editing-btn" 
+        type="button"
+        class="tab-btn relative z-10 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-zinc-400 hover:text-zinc-200 transition-colors duration-200 flex items-center gap-2"
+      >
+        <span>🎬</span>
+        <span data-id="Video Editing" data-en="Video Editing">Video Editing</span>
+        <span class="px-2 py-0.5 rounded-full text-[10px] font-mono bg-zinc-900 border border-zinc-800 text-zinc-400">
+          {editingVideos.length}
+        </span>
+      </button>
+    </div>
+  </div>
+
+  <!-- 2. SHOWCASE PANELS WITH FLUID TRANSITION -->
+  <div class="relative min-h-[400px]">
+    
+    <!-- PANEL 1: CODING GRID (3 Col Desktop, 2 Col Tablet, 1 Col Mobile) -->
+    <div 
+      id="coding-panel" 
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 transition-all duration-300 opacity-100 scale-100"
+    >
+      {codingProjects.map((project) => (
+        <ProjectCard 
+          title={project.data.title}
+          description={project.data.description}
+          category={project.data.category}
+          techStack={project.data.techStack}
+          thumbnail={project.data.thumbnail}
+          repoUrl={project.data.repoUrl}
+          demoUrl={project.data.demoUrl}
+        />
+      ))}
+    </div>
+
+    <!-- PANEL 2: EDITING GRID (Vertical 9:16 Aspect Cards) -->
+    <div 
+      id="editing-panel" 
+      class="hidden grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 transition-all duration-300 opacity-0 scale-95"
+    >
+      {editingVideos.map((video) => (
+        <VideoCard 
+          title={video.title}
+          platform={video.platform}
+          videoEmbedUrl={video.videoEmbedUrl}
+          thumbnail={video.thumbnail}
+          toolsUsed={video.toolsUsed}
+        />
+      ))}
+    </div>
+
+  </div>
+
+  <!-- 3. POPUP MODAL PEMUTAR VIDEO (High-End Backdrop) -->
+  <div 
+    id="video-modal" 
+    class="fixed inset-0 z-[9999] hidden bg-black/85 backdrop-blur-md flex items-center justify-center p-4 transition-opacity duration-300"
+  >
+    <div class="relative w-full max-w-sm aspect-[9/16] bg-zinc-950 rounded-3xl overflow-hidden border border-zinc-800 shadow-[0_25px_60px_rgba(0,0,0,0.9)] flex flex-col">
+      <div class="p-3.5 bg-zinc-900/90 flex justify-between items-center border-b border-zinc-800/80">
+        <span id="modal-video-title" class="text-xs font-semibold text-zinc-200 truncate pr-4">Video Preview</span>
+        <button 
+          onclick="closeVideoModal()" 
+          class="w-7 h-7 rounded-full bg-zinc-800 hover:bg-zinc-700 text-zinc-300 hover:text-white flex items-center justify-center text-sm font-bold transition-colors"
+          aria-label="Tutup Preview"
+        >
+          &times;
+        </button>
+      </div>
+      <iframe 
+        id="modal-iframe" 
+        class="w-full h-full" 
+        src="" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+
+</section>
+
+<!-- SCRIPT UX: SLIDING PILL ENGINE, SMOOTH SHUFFLE & CARD SPOTLIGHT -->
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const codingBtn = document.getElementById('tab-coding-btn');
+    const editingBtn = document.getElementById('tab-editing-btn');
+    const tabPill = document.getElementById('tab-slider-pill');
+    const codingPanel = document.getElementById('coding-panel');
+    const editingPanel = document.getElementById('editing-panel');
+
+    // Inisialisasi posisi awal pill slider mengikuti tombol Coding
+    function updatePillPosition(activeButton) {
+      if (!tabPill || !activeButton) return;
+      tabPill.style.width = `${activeButton.offsetWidth}px`;
+      tabPill.style.left = `${activeButton.offsetLeft}px`;
+    }
+
+    if (codingBtn) updatePillPosition(codingBtn);
+    if (document.fonts?.ready) {
+      document.fonts.ready.then(() => {
+        const currentActive = codingBtn?.classList.contains('text-white') ? codingBtn : editingBtn;
+        updatePillPosition(currentActive);
+      });
+    }
+    window.addEventListener('resize', () => {
+      const currentActive = codingBtn?.classList.contains('text-white') ? codingBtn : editingBtn;
+      updatePillPosition(currentActive);
+    });
+
+    // Pergantian Tab Halus dengan Cross-Fade & Scale Transition
+    function switchTab(targetTab) {
+      if (targetTab === 'coding') {
+        updatePillPosition(codingBtn);
+        codingBtn?.classList.replace('text-zinc-400', 'text-white');
+        editingBtn?.classList.replace('text-white', 'text-zinc-400');
+
+        // Fade Out Editing Panel
+        if (editingPanel) {
+          editingPanel.classList.remove('opacity-100', 'scale-100');
+          editingPanel.classList.add('opacity-0', 'scale-95');
+          setTimeout(() => {
+            editingPanel.classList.add('hidden');
+            codingPanel?.classList.remove('hidden');
+            
+            // Trigger Fade In Coding Panel
+            requestAnimationFrame(() => {
+              codingPanel?.classList.remove('opacity-0', 'scale-95');
+              codingPanel?.classList.add('opacity-100', 'scale-100');
+            });
+          }, 150);
+        }
+      } else {
+        updatePillPosition(editingBtn);
+        editingBtn?.classList.replace('text-zinc-400', 'text-white');
+        codingBtn?.classList.replace('text-white', 'text-zinc-400');
+
+        // Fade Out Coding Panel
+        if (codingPanel) {
+          codingPanel.classList.remove('opacity-100', 'scale-100');
+          codingPanel.classList.add('opacity-0', 'scale-95');
+          setTimeout(() => {
+            codingPanel.classList.add('hidden');
+            editingPanel?.classList.remove('hidden');
+
+            // Trigger Fade In Editing Panel
+            requestAnimationFrame(() => {
+              editingPanel?.classList.remove('opacity-0', 'scale-95');
+              editingPanel?.classList.add('opacity-100', 'scale-100');
+            });
+          }, 150);
+        }
+      }
+    }
+
+    codingBtn?.addEventListener('click', () => switchTab('coding'));
+    editingBtn?.addEventListener('click', () => switchTab('editing'));
+
+    // Card Radial Spotlight Effect
+    const projectCards = document.querySelectorAll('.project-card');
+    projectCards.forEach((card) => {
+      const spotlight = card.querySelector('.card-radial-spotlight');
+      const glowColor = card.getAttribute('data-glow-color') || 'rgba(34, 211, 238, 0.12)';
+      
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        if (spotlight) {
+          spotlight.style.background = `radial-gradient(350px circle at ${x}px ${y}px, ${glowColor}, transparent 70%)`;
+        }
+      });
+    });
+  });
+
+  // Global functions untuk pemutar video
+  function openVideoModal(url, title) {
+    const modal = document.getElementById('video-modal');
+    const iframe = document.getElementById('modal-iframe');
+    const titleEl = document.getElementById('modal-video-title');
+    if (modal && iframe && titleEl) {
+      iframe.src = url;
+      titleEl.innerText = title;
+      modal.classList.remove('hidden');
+    }
+  }
+
+  function closeVideoModal() {
+    const modal = document.getElementById('video-modal');
+    const iframe = document.getElementById('modal-iframe');
+    if (modal && iframe) {
+      iframe.src = '';
+      modal.classList.add('hidden');
+    }
+  }
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeVideoModal();
+  });
+</script>

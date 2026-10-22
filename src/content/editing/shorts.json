@@ -1,0 +1,11 @@
+[
+  {
+    "id": "sample-short-1",
+    "title": "Gameplay Highlights & Dynamic Pacing",
+    "platform": "YouTube Shorts",
+    "videoEmbedUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    "thumbnail": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=600&auto=format&fit=crop&q=80",
+    "toolsUsed": ["Premiere Pro", "After Effects"],
+    "tags": ["Gaming", "Fast Paced", "Color Grading"]
+  }
+]

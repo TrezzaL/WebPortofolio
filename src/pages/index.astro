@@ -1,11 +1,28 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import ShowcaseTabs from '../components/ShowcaseTabs.astro';
+import ContactSection from '../components/ContactSection.astro';
+import Footer from '../components/Footer.astro';
+import { getCollection } from 'astro:content';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const codingProjects = await getCollection('coding');
+const editingEntries = await getCollection('editing');
+const editingVideos = editingEntries.flatMap((entry: any) => entry.data);
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Choirul Rizal — Software Engineer & Video Editor">
+  <Navbar />
+  <main>
+    <Hero />
+    <About />
+    <ShowcaseTabs 
+      codingProjects={codingProjects} 
+      editingVideos={editingVideos} 
+    />
+    <ContactSection />
+  </main>
+  <Footer />
 </Layout>

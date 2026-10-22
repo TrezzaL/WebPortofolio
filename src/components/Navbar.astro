@@ -1,0 +1,277 @@
+---
+---
+
+<header id="main-navbar" class="fixed top-4 left-0 right-0 z-50 px-4 sm:px-6 transition-all duration-500">
+  <div class="max-w-5xl mx-auto">
+    <!-- Floating Pill Container -->
+    <div class="nav-pill relative backdrop-blur-xl bg-zinc-900/75 border border-zinc-800/80 rounded-2xl px-4 sm:px-6 h-16 flex items-center justify-between shadow-[0_8px_32px_rgba(0,0,0,0.35)] transition-all duration-300">
+      
+      <!-- 1. Logo / Brand -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="relative flex items-center justify-center w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-500/20 to-blue-600/20 border border-cyan-500/30 group-hover:border-cyan-400 transition-all duration-300">
+          <span class="font-extrabold text-sm tracking-tighter bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">CR</span>
+          <span class="absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_8px_#22d3ee] animate-pulse"></span>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-bold tracking-tight text-white text-sm sm:text-base leading-none group-hover:text-cyan-400 transition-colors">
+            Choirul Rizal<span class="text-cyan-400">.</span>
+          </span>
+          <span class="text-[10px] text-zinc-400 font-mono tracking-wider mt-0.5" data-id="DEV & EDITOR" data-en="DEV & CREATOR">
+            DEV & EDITOR
+          </span>
+        </div>
+      </a>
+
+      <!-- 2. Center Nav Links (Desktop) -->
+      <nav class="hidden md:flex items-center gap-1 p-1 rounded-xl bg-zinc-950/60 border border-zinc-800/60">
+        <a 
+          href="#about" 
+          class="nav-item px-4 py-1.5 rounded-lg text-xs font-semibold text-zinc-400 hover:text-white hover:bg-zinc-800/70 transition-all duration-200"
+          data-id="Tentang"
+          data-en="About"
+        >
+          Tentang
+        </a>
+        <a 
+          href="#showcase" 
+          class="nav-item px-4 py-1.5 rounded-lg text-xs font-semibold text-zinc-400 hover:text-white hover:bg-zinc-800/70 transition-all duration-200"
+          data-id="Karya"
+          data-en="Works"
+        >
+          Karya
+        </a>
+        <a 
+          href="#contact" 
+          class="nav-item px-4 py-1.5 rounded-lg text-xs font-semibold text-zinc-400 hover:text-white hover:bg-zinc-800/70 transition-all duration-200"
+          data-id="Kontak"
+          data-en="Contact"
+        >
+          Kontak
+        </a>
+      </nav>
+
+      <!-- 3. Right Controls: Lang Switcher, Theme Toggle & CTA -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        
+        <!-- Language Toggle (ID / EN) -->
+        <button 
+          id="lang-toggle" 
+          type="button"
+          aria-label="Switch Language"
+          class="flex items-center gap-1 px-2.5 py-1.5 rounded-xl bg-zinc-950/70 border border-zinc-800 hover:border-cyan-500/40 text-xs font-bold transition-all duration-200"
+        >
+          <span id="lang-id" class="text-cyan-400 transition-colors">ID</span>
+          <span class="text-zinc-600">/</span>
+          <span id="lang-en" class="text-zinc-500 transition-colors">EN</span>
+        </button>
+
+        <!-- Theme Toggle (Dark / Light) -->
+        <button 
+          id="theme-toggle" 
+          type="button"
+          aria-label="Toggle Theme"
+          class="w-9 h-9 rounded-xl bg-zinc-950/70 border border-zinc-800 hover:border-cyan-500/40 flex items-center justify-center text-zinc-300 hover:text-cyan-400 transition-all duration-200"
+        >
+          <!-- Sun Icon (muncul saat Dark Mode untuk pindah ke Light) -->
+          <svg id="icon-sun" class="w-4 h-4 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+          </svg>
+          <!-- Moon Icon (muncul saat Light Mode untuk pindah ke Dark) -->
+          <svg id="icon-moon" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- CTA Hire Me -->
+        <a 
+          href="#contact"
+          data-id="Hire Me"
+          data-en="Hire Me"
+          class="hidden sm:inline-flex items-center gap-1.5 text-xs font-bold px-4 py-2 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white hover:opacity-95 hover:shadow-[0_0_20px_rgba(6,182,212,0.45)] transition-all duration-300"
+        >
+          <span>Hire Me</span>
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-7-7 7 7-7 7"/>
+          </svg>
+        </a>
+
+        <!-- Mobile Hamburger Button -->
+        <button 
+          id="mobile-menu-btn" 
+          type="button"
+          aria-label="Open Menu"
+          class="md:hidden w-9 h-9 rounded-xl bg-zinc-950/70 border border-zinc-800 flex items-center justify-center text-zinc-300 hover:text-cyan-400 transition-colors"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden md:hidden mt-2 backdrop-blur-xl bg-zinc-900/90 border border-zinc-800 rounded-2xl p-4 shadow-2xl space-y-2">
+      <a href="#about" class="mobile-link block px-4 py-2.5 rounded-xl text-sm font-semibold text-zinc-300 hover:bg-zinc-800 hover:text-cyan-400" data-id="Tentang" data-en="About">Tentang</a>
+      <a href="#showcase" class="mobile-link block px-4 py-2.5 rounded-xl text-sm font-semibold text-zinc-300 hover:bg-zinc-800 hover:text-cyan-400" data-id="Karya" data-en="Works">Karya</a>
+      <a href="#contact" class="mobile-link block px-4 py-2.5 rounded-xl text-sm font-semibold text-zinc-300 hover:bg-zinc-800 hover:text-cyan-400" data-id="Kontak" data-en="Contact">Kontak</a>
+    </div>
+  </div>
+</header>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const htmlEl = document.documentElement;
+    const themeBtn = document.getElementById('theme-toggle');
+    const iconSun = document.getElementById('icon-sun');
+    const iconMoon = document.getElementById('icon-moon');
+    const langBtn = document.getElementById('lang-toggle');
+    const langId = document.getElementById('lang-id');
+    const langEn = document.getElementById('lang-en');
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    // --- 1. SISTEM DUAL THEME (DARK / LIGHT) ---
+    const savedTheme = localStorage.getItem('portfolio-theme') || 'dark';
+    applyTheme(savedTheme);
+
+    themeBtn?.addEventListener('click', () => {
+      const currentTheme = htmlEl.classList.contains('light') ? 'light' : 'dark';
+      const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      applyTheme(nextTheme);
+      localStorage.setItem('portfolio-theme', nextTheme);
+    });
+
+    function applyTheme(theme) {
+      if (theme === 'light') {
+        htmlEl.classList.add('light');
+        htmlEl.classList.remove('dark');
+        iconSun?.classList.add('hidden');
+        iconMoon?.classList.remove('hidden');
+      } else {
+        htmlEl.classList.add('dark');
+        htmlEl.classList.remove('light');
+        iconSun?.classList.remove('hidden');
+        iconMoon?.classList.add('hidden');
+      }
+    }
+
+    // --- 2. SISTEM MULTI-BAHASA (ID / EN) ---
+    const pageTranslations = {
+      id: {
+        heroBadge: 'Tersedia untuk Proyek & Kolaborasi',
+        heroTitle1: 'Membangun Solusi Digital & ',
+        heroTitle2: 'Visual yang Berdampak',
+        heroDesc: 'Halo, aku <strong class="text-zinc-200">Choirul Rizal</strong>. Pengembang perangkat lunak dan kreator konten yang fokus pada pembuatan aplikasi web, sistem desktop, serta produksi video visual dinamis.',
+        heroBtn1: 'Eksplor Karya',
+        heroBtn2: 'Hubungi Saya',
+        aboutBadge: '👨‍💻 Tentang Saya',
+        aboutTitle: 'Menggabungkan Logika Koding dengan Estetika Visual',
+        aboutDesc: 'Aku adalah pengembang perangkat lunak sekaligus kreator video. Berpengalaman membangun aplikasi desktop gudang, platform e-commerce, game mobile, hingga memproduksi konten video berkecepatan dinamis dan simulasi animasi 3D.',
+        showcaseTitle: 'Showcase Karya',
+        showcaseDesc: 'Pilih kategori karya yang ingin kamu eksplorasi.',
+        contactTitle: 'Mulai Diskusi & Kolaborasi',
+        contactDesc: 'Punya ide proyek aplikasi, butuh video editor untuk kontenmu, atau ingin berdiskusi? Kirim pesan lewat form di bawah atau hubungi langsung via WhatsApp.',
+        contactDirect: 'Kontak Langsung',
+        contactDirectSub: 'Fast response melalui WhatsApp untuk penawaran mendesak.',
+        submitBtn: 'Kirim Pesan'
+      },
+      en: {
+        heroBadge: 'Available for Projects & Collaboration',
+        heroTitle1: 'Building Digital Solutions & ',
+        heroTitle2: 'Impactful Visuals',
+        heroDesc: 'Hi, I am <strong class="text-zinc-200">Choirul Rizal</strong>. A software engineer and content creator focused on building web applications, desktop systems, and producing dynamic visual videos.',
+        heroBtn1: 'Explore Works',
+        heroBtn2: 'Contact Me',
+        aboutBadge: '👨‍💻 About Me',
+        aboutTitle: 'Combining Coding Logic with Visual Aesthetics',
+        aboutDesc: 'I am a software developer and video creator. Experienced in building warehouse desktop apps, e-commerce platforms, mobile games, as well as producing fast-paced video content and 3D animation simulations.',
+        showcaseTitle: 'Featured Works',
+        showcaseDesc: 'Select a category of work you would like to explore.',
+        contactTitle: 'Start a Discussion & Collaboration',
+        contactDesc: 'Have an app project idea, need a video editor for your content, or want to discuss? Send a message via the form below or reach out directly via WhatsApp.',
+        contactDirect: 'Direct Contact',
+        contactDirectSub: 'Fast response via WhatsApp for urgent inquiries.',
+        submitBtn: 'Send Message'
+      }
+    };
+
+    let currentLang = localStorage.getItem('portfolio-lang') || 'id';
+    applyLanguage(currentLang);
+
+    langBtn?.addEventListener('click', () => {
+      currentLang = currentLang === 'id' ? 'en' : 'id';
+      applyLanguage(currentLang);
+      localStorage.setItem('portfolio-lang', currentLang);
+    });
+
+    function applyLanguage(lang) {
+      // Update indikator tombol ID/EN
+      if (lang === 'en') {
+        langEn?.classList.replace('text-zinc-500', 'text-cyan-400');
+        langId?.classList.replace('text-cyan-400', 'text-zinc-500');
+      } else {
+        langId?.classList.replace('text-zinc-500', 'text-cyan-400');
+        langEn?.classList.replace('text-cyan-400', 'text-zinc-500');
+      }
+
+      // 1. Terjemahkan semua elemen yang punya atribut data-id dan data-en
+      document.querySelectorAll('[data-id][data-en]').forEach((el) => {
+        const text = el.getAttribute(`data-${lang}`);
+        if (text) el.textContent = text;
+      });
+
+      // 2. Terjemahkan otomatis teks di section Hero, About, Showcase, & Contact
+      const t = pageTranslations[lang];
+      const heroSection = document.querySelector('main > section:first-of-type');
+      if (heroSection) {
+        const badge = heroSection.querySelector('div.inline-flex');
+        if (badge) badge.innerHTML = `<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> ${t.heroBadge}`;
+        const h1 = heroSection.querySelector('h1');
+        if (h1) h1.innerHTML = `${t.heroTitle1}<br class="hidden sm:block" /><span class="bg-gradient-to-r from-cyan-400 via-sky-300 to-blue-500 bg-clip-text text-transparent">${t.heroTitle2}</span>`;
+        const p = heroSection.querySelector('p');
+        if (p) p.innerHTML = t.heroDesc;
+        const btns = heroSection.querySelectorAll('a');
+        if (btns[0]) btns[0].textContent = t.heroBtn1;
+        if (btns[1]) btns[1].textContent = t.heroBtn2;
+      }
+
+      const aboutSection = document.getElementById('about');
+      if (aboutSection) {
+        const h2 = aboutSection.querySelector('h2');
+        if (h2) h2.textContent = t.aboutTitle;
+        const p = aboutSection.querySelector('p');
+        if (p) p.textContent = t.aboutDesc;
+      }
+
+      const showcaseSection = document.getElementById('showcase');
+      if (showcaseSection) {
+        const h2 = showcaseSection.querySelector('h2');
+        if (h2) h2.textContent = t.showcaseTitle;
+        const p = showcaseSection.querySelector('p');
+        if (p) p.textContent = t.showcaseDesc;
+      }
+
+      const contactSection = document.getElementById('contact');
+      if (contactSection) {
+        const h2 = contactSection.querySelector('h2');
+        if (h2) h2.textContent = t.contactTitle;
+        const p = contactSection.querySelector('p');
+        if (p) p.textContent = t.contactDesc;
+        const h3 = contactSection.querySelector('h3');
+        if (h3) h3.textContent = t.contactDirect;
+        const submitBtn = contactSection.querySelector('button[type="submit"]');
+        if (submitBtn) submitBtn.textContent = t.submitBtn;
+      }
+    }
+
+    // --- 3. MOBILE MENU TOGGLE ---
+    mobileBtn?.addEventListener('click', () => {
+      mobileMenu?.classList.toggle('hidden');
+    });
+
+    document.querySelectorAll('.mobile-link').forEach((link) => {
+      link.addEventListener('click', () => mobileMenu?.classList.add('hidden'));
+    });
+  });
+</script>

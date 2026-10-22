@@ -1,0 +1,55 @@
+---
+interface Props {
+  title: string;
+  platform: string;
+  videoEmbedUrl: string;
+  thumbnail: string;
+  toolsUsed: string[];
+}
+
+const { title, platform, videoEmbedUrl, thumbnail, toolsUsed } = Astro.props;
+---
+
+<div 
+  class="group relative rounded-3xl overflow-hidden bg-zinc-900 border border-zinc-800/80 hover:border-cyan-500/50 transition-all duration-300 cursor-pointer aspect-[9/16] flex flex-col justify-end p-5"
+  data-video-url={videoEmbedUrl}
+  data-video-title={title}
+  onclick="openVideoModal(this.dataset.videoUrl, this.dataset.videoTitle)"
+>
+  <!-- Background Thumbnail -->
+  <img 
+    src={thumbnail} 
+    alt={title} 
+    class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+    loading="lazy"
+  />
+
+  <!-- Dark Gradient Overlay -->
+  <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-transparent"></div>
+
+  <!-- Play Button Icon Center Overlay -->
+  <div class="absolute inset-0 flex items-center justify-center opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300">
+    <div class="w-12 h-12 rounded-full bg-cyan-500/90 text-white flex items-center justify-center shadow-lg shadow-cyan-500/40">
+      <svg class="w-6 h-6 fill-current translate-x-0.5" viewBox="0 0 24 24">
+        <path d="M8 5v14l11-7z"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Card Info -->
+  <div class="relative z-10">
+    <span class="inline-block px-2 py-0.5 rounded text-[10px] font-medium bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 mb-2">
+      {platform}
+    </span>
+    <h4 class="text-sm font-bold text-white leading-snug line-clamp-2 mb-2">
+      {title}
+    </h4>
+    <div class="flex flex-wrap gap-1">
+      {toolsUsed.map((tool) => (
+        <span class="text-[10px] text-zinc-400 bg-zinc-950/70 px-1.5 py-0.5 rounded">
+          {tool}
+        </span>
+      ))}
+    </div>
+  </div>
+</div>

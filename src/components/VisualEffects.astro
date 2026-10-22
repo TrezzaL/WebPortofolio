@@ -1,0 +1,267 @@
+---
+---
+
+<!-- 1. TOP SCROLL PROGRESS BAR -->
+<div id="scroll-progress" class="fixed top-0 left-0 h-[3px] bg-gradient-to-r from-cyan-400 via-sky-500 to-blue-600 z-[9998] w-0 shadow-[0_0_12px_#22d3ee] transition-all duration-75"></div>
+
+<!-- 2. SPLASH SCREEN (PRELOADER) -->
+<div id="splash-screen" class="fixed inset-0 z-[9999] bg-zinc-950 flex flex-col items-center justify-center transition-all duration-700 ease-in-out">
+  <!-- Background Glow in Splash -->
+  <div class="absolute w-80 h-80 bg-cyan-500/20 rounded-full blur-3xl animate-pulse pointer-events-none"></div>
+
+  <div class="relative z-10 text-center px-6">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-[11px] text-cyan-400 tracking-widest uppercase mb-4">
+      <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+      System Initializing
+    </div>
+
+    <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mb-2">
+      CHOIRUL RIZAL<span class="text-cyan-400">.</span>
+    </h1>
+    <p class="text-xs sm:text-sm text-zinc-400 tracking-widest uppercase mb-8">
+      Software Engineering &bull; Visual Arts
+    </p>
+
+    <!-- Progress Bar Container -->
+    <div class="w-64 sm:w-80 h-1.5 bg-zinc-900 rounded-full overflow-hidden border border-zinc-800 mx-auto mb-3">
+      <div id="splash-bar" class="h-full bg-gradient-to-r from-cyan-400 to-blue-500 w-0 shadow-[0_0_15px_#22d3ee] transition-all duration-100"></div>
+    </div>
+
+    <div class="flex justify-between w-64 sm:w-80 mx-auto text-[11px] font-mono text-zinc-400">
+      <span id="splash-status">Loading assets...</span>
+      <span id="splash-percent" class="text-cyan-400 font-bold">0%</span>
+    </div>
+  </div>
+</div>
+
+<!-- 3. CUSTOM CURSOR & MOUSE SPOTLIGHT -->
+<div id="cursor-dot" class="fixed top-0 left-0 w-2.5 h-2.5 bg-cyan-400 rounded-full pointer-events-none z-[9999] -translate-x-1/2 -translate-y-1/2 shadow-[0_0_10px_#22d3ee] hidden md:block"></div>
+<div id="cursor-ring" class="fixed top-0 left-0 w-9 h-9 border border-cyan-400/60 rounded-full pointer-events-none z-[9998] -translate-x-1/2 -translate-y-1/2 transition-out duration-150 ease-out hidden md:block"></div>
+<div id="cursor-spotlight" class="fixed top-0 left-0 w-[450px] h-[450px] bg-cyan-500/10 rounded-full blur-[100px] pointer-events-none -z-10 -translate-x-1/2 -translate-y-1/2 hidden md:block"></div>
+
+<!-- 4. ANIMATED BACKGROUND (CANVAS PARTICLES + CYBER GRID) -->
+<div class="fixed inset-0 -z-20 pointer-events-none overflow-hidden">
+  <div class="bg-grid-pattern absolute inset-0 opacity-25"></div>
+  <canvas id="particle-canvas" class="absolute inset-0 w-full h-full"></canvas>
+</div>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    // --- A. SPLASH SCREEN LOGIC ---
+    const splash = document.getElementById('splash-screen');
+    const splashBar = document.getElementById('splash-bar');
+    const splashPercent = document.getElementById('splash-percent');
+    const splashStatus = document.getElementById('splash-status');
+    
+    let progress = 0;
+    document.body.style.overflow = 'hidden';
+
+    const interval = setInterval(() => {
+      progress += Math.floor(Math.random() * 14) + 6;
+      if (progress >= 100) {
+        progress = 100;
+        clearInterval(interval);
+        if (splashStatus) splashStatus.innerText = 'Ready!';
+        
+        setTimeout(() => {
+          if (splash) {
+            splash.style.opacity = '0';
+            splash.style.transform = 'scale(1.05)';
+            splash.style.pointerEvents = 'none';
+          }
+          document.body.style.overflow = '';
+          initScrollReveal();
+        }, 350);
+      }
+      if (splashBar) splashBar.style.width = `${progress}%`;
+      if (splashPercent) splashPercent.innerText = `${progress}%`;
+      if (progress > 50 && progress < 100 && splashStatus) {
+        splashStatus.innerText = 'Preparing workspace...';
+      }
+    }, 80);
+
+    // --- B. CUSTOM CURSOR LOGIC ---
+    const dot = document.getElementById('cursor-dot');
+    const ring = document.getElementById('cursor-ring');
+    const spotlight = document.getElementById('cursor-spotlight');
+
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
+    let ringX = mouseX;
+    let ringY = mouseY;
+
+    window.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+
+      if (dot) {
+        dot.style.left = `${mouseX}px`;
+        dot.style.top = `${mouseY}px`;
+      }
+      if (spotlight) {
+        spotlight.style.left = `${mouseX}px`;
+        spotlight.style.top = `${mouseY}px`;
+      }
+    });
+
+    function animateCursor() {
+      ringX += (mouseX - ringX) * 0.18;
+      ringY += (mouseY - ringY) * 0.18;
+      if (ring) {
+        ring.style.left = `${ringX}px`;
+        ring.style.top = `${ringY}px`;
+      }
+      requestAnimationFrame(animateCursor);
+    }
+    animateCursor();
+
+    // Hover scale effect on clickable elements
+    const clickables = document.querySelectorAll('a, button, input, textarea, select, [onclick]');
+    clickables.forEach((el) => {
+      el.addEventListener('mouseenter', () => {
+        ring?.classList.add('scale-150', 'bg-cyan-400/15', 'border-cyan-300');
+        dot?.classList.add('scale-50');
+      });
+      el.addEventListener('mouseleave', () => {
+        ring?.classList.remove('scale-150', 'bg-cyan-400/15', 'border-cyan-300');
+        dot?.classList.remove('scale-50');
+      });
+    });
+
+    // --- C. TOP SCROLL PROGRESS BAR ---
+    const scrollProgress = document.getElementById('scroll-progress');
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      if (scrollProgress) scrollProgress.style.width = `${scrollPercent}%`;
+    });
+
+    // --- D. 3D TILT HOVER EFFECT ON CARDS (OPTIMIZED & ZERO LAG) ---
+    const isFinePointer = window.matchMedia('(pointer: fine)').matches;
+    if (isFinePointer) {
+      const cards = document.querySelectorAll('#coding-panel > div, #editing-panel > div, #about .bento-card');
+      cards.forEach((card) => {
+        card.addEventListener('mouseenter', () => {
+          card.style.transition = 'none';
+        });
+
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+          const rotateX = ((y - centerY) / centerY) * -6;
+          const rotateY = ((x - centerX) / centerX) * 6;
+
+          card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+          card.style.transition = 'transform 0.4s ease-out';
+          card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)';
+        });
+      });
+    }
+
+    // --- E. SCROLL REVEAL ANIMATION (WITH DELAY RESET) ---
+    function initScrollReveal() {
+      const revealElements = document.querySelectorAll('section h1, section h2, section p, #coding-panel > div, #editing-panel > div, #about .bento-card, #contact > div');
+      
+      revealElements.forEach((el, index) => {
+        el.classList.add('reveal-item');
+        el.style.transitionDelay = `${(index % 4) * 75}ms`;
+      });
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            
+            // Menghapus nilai transitionDelay bawaan agar animasi hover langsung responsif 0ms
+            setTimeout(() => {
+              entry.target.style.transitionDelay = '0ms';
+            }, 750);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      revealElements.forEach((el) => observer.observe(el));
+    }
+
+    // --- F. INTERACTIVE PARTICLE CANVAS ---
+    const canvas = document.getElementById('particle-canvas');
+    if (canvas) {
+      const ctx = canvas.getContext('2d');
+      let width = (canvas.width = window.innerWidth);
+      let height = (canvas.height = window.innerHeight);
+
+      window.addEventListener('resize', () => {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+      });
+
+      const isMobile = window.innerWidth < 768;
+      const count = isMobile ? 18 : 45;
+
+      const particles = Array.from({ length: count }, () => ({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        vx: (Math.random() - 0.5) * 0.4,
+        vy: (Math.random() - 0.5) * 0.4,
+        size: Math.random() * 2 + 0.5,
+      }));
+
+      function drawParticles() {
+        ctx.clearRect(0, 0, width, height);
+        particles.forEach((p, i) => {
+          p.x += p.vx;
+          p.y += p.vy;
+
+          if (p.x < 0 || p.x > width) p.vx *= -1;
+          if (p.y < 0 || p.y > height) p.vy *= -1;
+
+          // Draw particle dot
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(34, 211, 238, 0.35)';
+          ctx.fill();
+
+          // Connect particles near mouse (Desktop only)
+          if (!isMobile) {
+            const dxMouse = p.x - mouseX;
+            const dyMouse = p.y - mouseY;
+            const distMouse = Math.sqrt(dxMouse * dxMouse + dyMouse * dyMouse);
+            if (distMouse < 160) {
+              ctx.beginPath();
+              ctx.moveTo(p.x, p.y);
+              ctx.lineTo(mouseX, mouseY);
+              ctx.strokeStyle = `rgba(34, 211, 238, ${0.25 - distMouse / 640})`;
+              ctx.lineWidth = 0.8;
+              ctx.stroke();
+            }
+          }
+
+          // Connect nearby particles
+          for (let j = i + 1; j < particles.length; j++) {
+            const p2 = particles[j];
+            const dx = p.x - p2.x;
+            const dy = p.y - p2.y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < 120) {
+              ctx.beginPath();
+              ctx.moveTo(p.x, p.y);
+              ctx.lineTo(p2.x, p2.y);
+              ctx.strokeStyle = `rgba(34, 211, 238, ${0.12 - dist / 1000})`;
+              ctx.lineWidth = 0.5;
+              ctx.stroke();
+            }
+          }
+        });
+        requestAnimationFrame(drawParticles);
+      }
+      drawParticles();
+    }
+  });
+</script>

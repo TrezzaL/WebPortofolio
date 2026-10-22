@@ -1,0 +1,500 @@
+---
+// Kontak Section - Full Custom Glassmorphic Dropdown & Futuristic Bento
+const categories = [
+  {
+    id: "project",
+    labelId: "Pengembangan Aplikasi / Software",
+    labelEn: "Software & Web Development",
+    descId: "Web app, Desktop C#, Mobile Kotlin, dll.",
+    descEn: "Web apps, Desktop, Mobile, etc.",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>`
+  },
+  {
+    id: "editing",
+    labelId: "Video Editing & Animasi 3D",
+    labelEn: "Video Editing & 3D Animation",
+    descId: "Post-production, Shorts/Reels, Motion, Blender",
+    descEn: "Post-production, Shorts/Reels, 3D Scenes",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>`
+  },
+  {
+    id: "hiring",
+    labelId: "Tawaran Kerja / Kontrak",
+    labelEn: "Job Opportunity / Contract",
+    descId: "Full-time position, freelance project, partnership",
+    descEn: "Full-time position, freelance, partnership",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>`
+  },
+  {
+    id: "other",
+    labelId: "Diskusi Bebas & Hal Lainnya",
+    labelEn: "Casual Discussion & Others",
+    descId: "Konsultasi ide, sharing teknis, atau sapaan",
+    descEn: "Brainstorming, general inquiries, or greetings",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>`
+  }
+];
+---
+
+<section id="contact" class="py-24 max-w-6xl mx-auto px-6 relative overflow-hidden">
+  
+  <!-- Ornamen Latar Belakang -->
+  <div class="absolute -top-20 -right-20 w-80 h-80 bg-cyan-500/15 rounded-full blur-[100px] pointer-events-none animate-pulse duration-[4000ms] -z-10"></div>
+  <div class="absolute -bottom-20 -left-20 w-80 h-80 bg-blue-600/15 rounded-full blur-[100px] pointer-events-none animate-pulse duration-[6000ms] -z-10"></div>
+  <div class="absolute inset-0 bg-[radial-gradient(#22d3ee_1px,transparent_1px)] [background-size:32px_32px] opacity-[0.03] pointer-events-none -z-10"></div>
+
+  <!-- Wadah Utama Glassmorphism Bento -->
+  <div class="contact-card relative rounded-3xl bg-zinc-900/60 border border-zinc-800/90 backdrop-blur-2xl p-8 sm:p-12 lg:p-14 shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-300">
+    
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-[1.5px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent shadow-[0_0_15px_#22d3ee]"></div>
+
+    <!-- Header Section -->
+    <div class="text-center max-w-2xl mx-auto mb-12 space-y-3">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-semibold tracking-wide">
+        <span class="w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_8px_#22d3ee] animate-ping"></span>
+        <span data-id="Koneksi & Diskusi" data-en="Get in Touch">Koneksi & Diskusi</span>
+      </div>
+
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
+        <span data-id="Mulai Diskusi &" data-en="Start a Discussion &">Mulai Diskusi &</span>
+        <span class="bg-gradient-to-r from-cyan-400 via-sky-300 to-blue-500 bg-clip-text text-transparent">
+          <span data-id="Kolaborasi Hebat" data-en="Great Collaboration">Kolaborasi Hebat</span>
+        </span>
+      </h2>
+
+      <p 
+        class="text-sm sm:text-base text-zinc-400 leading-relaxed max-w-lg mx-auto"
+        data-id="Punya konsep aplikasi, kebutuhan video editing ritme cepat, atau proyek kerja sama? Kirimkan pesan atau kontak langsung via WhatsApp."
+        data-en="Have an app concept, high-pace video editing needs, or collaborative project? Leave a message or connect directly via WhatsApp."
+      >
+        Punya konsep aplikasi, kebutuhan video editing ritme cepat, atau proyek kerja sama? Kirimkan pesan atau kontak langsung via WhatsApp.
+      </p>
+    </div>
+
+    <!-- Grid Layout Asimetris -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+      
+      <!-- KOLOM KIRI: Direct Contact & Info Cards (5 Kolom) -->
+      <div class="lg:col-span-5 space-y-6">
+        
+        <!-- Kartu WhatsApp Utama -->
+        <div class="p-6 rounded-2xl bg-zinc-950/70 border border-zinc-800/80 hover:border-emerald-500/40 transition-all duration-300 group relative overflow-hidden">
+          <div class="absolute -right-8 -bottom-8 w-24 h-24 bg-emerald-500/10 rounded-full blur-xl group-hover:scale-150 transition-transform duration-500"></div>
+
+          <div class="flex items-center gap-3 mb-2">
+            <div class="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 shadow-inner">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+              </svg>
+            </div>
+            <h3 class="text-sm font-bold text-white group-hover:text-emerald-400 transition-colors" data-id="Respon Cepat" data-en="Fast Response">
+              Respon Cepat
+            </h3>
+          </div>
+
+          <p class="text-xs text-zinc-400 leading-relaxed mb-4" data-id="Hubungi langsung via WhatsApp untuk penawaran kilat atau diskusi mendesak." data-en="Reach out via WhatsApp directly for quick proposals or urgent queries.">
+            Hubungi langsung via WhatsApp untuk penawaran kilat atau diskusi mendesak.
+          </p>
+
+          <a 
+            href="https://wa.me/6282115377730?text=Halo%20Choirul,%20saya%20tertarik%20bekerja%20sama" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="group/btn relative w-full py-3 px-4 rounded-xl bg-emerald-500/10 hover:bg-emerald-500 text-emerald-400 hover:text-zinc-950 border border-emerald-500/30 hover:border-emerald-400 text-xs font-bold flex items-center justify-center gap-2 transition-all duration-300 shadow-[0_0_15px_rgba(16,185,129,0.1)] hover:shadow-[0_0_25px_rgba(16,185,129,0.4)] hover:-translate-y-0.5"
+          >
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+            </svg>
+            <span data-id="Buka WhatsApp Langsung" data-en="Chat via WhatsApp">Buka WhatsApp Langsung</span>
+            <span class="group-hover/btn:translate-x-1 transition-transform">&rarr;</span>
+          </a>
+        </div>
+
+        <!-- Detail Micro-Cards -->
+        <div class="space-y-3">
+          <div class="p-4 rounded-xl bg-zinc-950/50 border border-zinc-800/80 flex items-center gap-3 hover:border-zinc-700 transition-colors">
+            <div class="w-8 h-8 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center text-cyan-400">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+            </div>
+            <div>
+              <span class="text-[11px] font-mono text-zinc-400 block" data-id="Zona Waktu & Lokasi" data-en="Location & Timezone">Zona Waktu & Lokasi</span>
+              <span class="text-xs font-semibold text-zinc-200">Cimahi / Bandung, West Java (WIB)</span>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-xl bg-zinc-950/50 border border-zinc-800/80 flex items-center gap-3 hover:border-zinc-700 transition-colors">
+            <div class="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399] animate-pulse"></span>
+            </div>
+            <div>
+              <span class="text-[11px] font-mono text-zinc-400 block" data-id="Status Kerja" data-en="Working Status">Status Kerja</span>
+              <span class="text-xs font-semibold text-emerald-400" data-id="Tersedia untuk Proyek / Kontrak" data-en="Available for Projects / Contracts">
+                Tersedia untuk Proyek / Kontrak
+              </span>
+            </div>
+          </div>
+
+          <div 
+            id="copy-email-btn"
+            class="p-4 rounded-xl bg-zinc-950/50 border border-zinc-800/80 flex items-center justify-between hover:border-cyan-500/40 transition-colors cursor-pointer group/email"
+            title="Klik untuk menyalin email"
+          >
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 group-hover/email:text-cyan-400 transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+              </div>
+              <div>
+                <span class="text-[11px] font-mono text-zinc-400 block" data-id="Alamat Email Utama" data-en="Direct Mail">Alamat Email Utama</span>
+                <span id="email-address-text" class="text-xs font-semibold text-zinc-200 group-hover/email:text-cyan-400 transition-colors">
+                  choirulrizal889@gmail.com
+                </span>
+              </div>
+            </div>
+            <span id="copy-status" class="text-[10px] font-mono text-zinc-400 group-hover/email:text-cyan-400 transition-colors">
+              Salin
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- KOLOM KANAN: FORMULIR ELEGAN & CUSTOM DROPDOWN (7 Kolom) -->
+      <div class="lg:col-span-7">
+        <form id="contact-form" class="space-y-4">
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <!-- Input Nama (Floating Label) -->
+            <div class="relative group/field">
+              <input 
+                type="text" 
+                id="form-name" 
+                name="name" 
+                required 
+                placeholder=" "
+                class="peer w-full px-4 pt-5 pb-2 text-sm text-zinc-100 bg-zinc-950/70 border border-zinc-800/80 rounded-xl focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400/50 focus:bg-zinc-950 transition-all duration-200"
+              />
+              <label 
+                for="form-name" 
+                class="absolute left-4 top-3.5 text-xs text-zinc-400 tracking-wide pointer-events-none origin-[0] -translate-y-2 scale-85 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-2 peer-focus:scale-85 peer-focus:text-cyan-400 transition-all duration-200"
+                data-id="Nama Lengkap" 
+                data-en="Full Name"
+              >
+                Nama Lengkap
+              </label>
+            </div>
+
+            <!-- Input Email (Floating Label) -->
+            <div class="relative group/field">
+              <input 
+                type="email" 
+                id="form-email" 
+                name="email" 
+                required 
+                placeholder=" "
+                class="peer w-full px-4 pt-5 pb-2 text-sm text-zinc-100 bg-zinc-950/70 border border-zinc-800/80 rounded-xl focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400/50 focus:bg-zinc-950 transition-all duration-200"
+              />
+              <label 
+                for="form-email" 
+                class="absolute left-4 top-3.5 text-xs text-zinc-400 tracking-wide pointer-events-none origin-[0] -translate-y-2 scale-85 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-2 peer-focus:scale-85 peer-focus:text-cyan-400 transition-all duration-200"
+                data-id="Alamat Email" 
+                data-en="Email Address"
+              >
+                Alamat Email
+              </label>
+            </div>
+          </div>
+
+          <!-- ==============================================
+               FULL CUSTOM GLASSMORPHIC DROPDOWN
+               ============================================== -->
+          <div class="relative" id="custom-dropdown-container">
+            <label class="block text-[11px] font-mono text-zinc-400 mb-1.5 ml-1" data-id="Kategori Kepentingan" data-en="Purpose Category">
+              Kategori Kepentingan
+            </label>
+
+            <!-- Hidden Input for Form Submission -->
+            <input type="hidden" name="category" id="hidden-category" value="project" />
+
+            <!-- Trigger Button -->
+            <button 
+              type="button" 
+              id="dropdown-trigger"
+              class="w-full flex items-center justify-between px-4 py-3 rounded-xl bg-zinc-950/70 border border-zinc-800/80 hover:border-cyan-500/50 focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400/50 transition-all duration-200 text-left group"
+            >
+              <div class="flex items-center gap-3">
+                <div id="selected-icon" class="w-7 h-7 rounded-lg bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                  </svg>
+                </div>
+                <div>
+                  <span id="selected-label" class="text-sm font-semibold text-zinc-200 block leading-tight">
+                    Pengembangan Aplikasi / Software
+                  </span>
+                  <span id="selected-desc" class="text-[11px] text-zinc-400 block font-mono">
+                    Web app, Desktop C#, Mobile Kotlin, dll.
+                  </span>
+                </div>
+              </div>
+
+              <!-- Animated Chevron -->
+              <div id="dropdown-chevron" class="text-zinc-500 group-hover:text-cyan-400 transition-transform duration-300">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7"/>
+                </svg>
+              </div>
+            </button>
+
+            <!-- Dropdown Menu List Floating Modal -->
+            <div 
+              id="dropdown-menu" 
+              class="absolute top-full left-0 right-0 mt-2 z-50 p-2 rounded-2xl bg-zinc-950/95 border border-zinc-800/90 backdrop-blur-2xl shadow-[0_20px_40px_rgba(0,0,0,0.8)] opacity-0 scale-95 pointer-events-none transition-all duration-200 origin-top space-y-1"
+            >
+              {categories.map((item, idx) => (
+                <div 
+                  class="dropdown-option flex items-center justify-between p-2.5 rounded-xl cursor-pointer hover:bg-zinc-900 border border-transparent hover:border-zinc-800 transition-all duration-150 group/opt"
+                  data-value={item.id}
+                  data-label-id={item.labelId}
+                  data-label-en={item.labelEn}
+                  data-desc-id={item.descId}
+                  data-desc-en={item.descEn}
+                  data-icon={item.icon}
+                >
+                  <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-lg bg-zinc-900 group-hover/opt:bg-cyan-500/10 border border-zinc-800 group-hover/opt:border-cyan-500/30 flex items-center justify-center text-zinc-400 group-hover/opt:text-cyan-400 transition-colors">
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" set:html={item.icon} />
+                    </div>
+                    <div>
+                      <span class="text-xs font-semibold text-zinc-200 group-hover/opt:text-white block leading-tight">
+                        {item.labelId}
+                      </span>
+                      <span class="text-[10px] text-zinc-400 font-mono block">
+                        {item.descId}
+                      </span>
+                    </div>
+                  </div>
+
+                  <!-- Checkmark Indicator -->
+                  <div class={`check-indicator text-cyan-400 ${idx === 0 ? 'opacity-100' : 'opacity-0'} group-hover/opt:scale-110 transition-all`}>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                    </svg>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Input Pesan (Floating Label) -->
+          <div class="relative group/field">
+            <textarea 
+              id="form-message"
+              name="message"
+              rows="4" 
+              required 
+              placeholder=" "
+              class="peer w-full px-4 pt-6 pb-2 text-sm text-zinc-100 bg-zinc-950/70 border border-zinc-800/80 rounded-xl focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400/50 focus:bg-zinc-950 transition-all duration-200 resize-none"
+            ></textarea>
+            <label 
+              for="form-message" 
+              class="absolute left-4 top-3 text-xs text-zinc-400 tracking-wide pointer-events-none origin-[0] -translate-y-2 scale-85 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-2 peer-focus:scale-85 peer-focus:text-cyan-400 transition-all duration-200"
+              data-id="Ceritakan rencana proyek atau pertanyaanmu di sini..." 
+              data-en="Describe your project vision or inquiries here..."
+            >
+              Ceritakan rencana proyek atau pertanyaanmu di sini...
+            </label>
+          </div>
+
+          <!-- Submit Button -->
+          <button 
+            id="submit-btn"
+            type="submit"
+            class="group/submit relative w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-cyan-500 via-sky-500 to-blue-600 text-white font-bold text-sm tracking-wide overflow-hidden transition-all duration-300 shadow-[0_0_20px_rgba(6,182,212,0.3)] hover:shadow-[0_0_30px_rgba(6,182,212,0.6)] hover:-translate-y-0.5 active:scale-[0.99] flex items-center justify-center gap-2"
+          >
+            <div class="absolute inset-0 -translate-x-full group-hover/submit:translate-x-full duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform ease-in-out pointer-events-none"></div>
+
+            <span id="btn-text" class="flex items-center gap-2" data-id="Kirim Pesan Sekarang" data-en="Send Message Now">
+              <span>Kirim Pesan Sekarang</span>
+              <svg class="w-4 h-4 group-hover/submit:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"/>
+              </svg>
+            </span>
+
+            <span id="btn-spinner" class="hidden items-center gap-2">
+              <svg class="animate-spin w-4 h-4 text-white" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              </svg>
+              <span data-id="Mengirimkan pesan..." data-en="Transmitting message...">Mengirimkan pesan...</span>
+            </span>
+          </button>
+
+        </form>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Toast Notification Feedback -->
+  <div 
+    id="toast-notification" 
+    class="fixed bottom-6 right-6 z-[9999] translate-y-24 opacity-0 transition-all duration-300 pointer-events-none"
+  >
+    <div class="flex items-center gap-3 px-5 py-3.5 rounded-2xl bg-zinc-900/95 border border-cyan-500/40 backdrop-blur-xl shadow-[0_10px_35px_rgba(0,0,0,0.8)] text-zinc-100 text-xs font-medium">
+      <div class="w-6 h-6 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold">
+        ✓
+      </div>
+      <div>
+        <p class="font-bold text-white" data-id="Pesan Terkirim!" data-en="Message Sent!">Pesan Terkirim!</p>
+        <p class="text-zinc-400 text-[11px]" data-id="Terima kasih, aku akan merespons sesegera mungkin." data-en="Thank you, I will respond to you shortly.">
+          Terima kasih, aku akan merespons sesegera mungkin.
+        </p>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- SCRIPT UX: CUSTOM DROPDOWN ENGINE & FORM HANDLING -->
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    // --- 1. CUSTOM DROPDOWN ENGINE ---
+    const trigger = document.getElementById('dropdown-trigger');
+    const menu = document.getElementById('dropdown-menu');
+    const chevron = document.getElementById('dropdown-chevron');
+    const hiddenInput = document.getElementById('hidden-category');
+    const selectedIcon = document.getElementById('selected-icon');
+    const selectedLabel = document.getElementById('selected-label');
+    const selectedDesc = document.getElementById('selected-desc');
+    const options = document.querySelectorAll('.dropdown-option');
+
+    let isOpen = false;
+
+    function openDropdown() {
+      isOpen = true;
+      menu?.classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
+      menu?.classList.add('opacity-100', 'scale-100', 'pointer-events-auto');
+      chevron?.classList.add('rotate-180', 'text-cyan-400');
+    }
+
+    function closeDropdown() {
+      isOpen = false;
+      menu?.classList.remove('opacity-100', 'scale-100', 'pointer-events-auto');
+      menu?.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
+      chevron?.classList.remove('rotate-180', 'text-cyan-400');
+    }
+
+    trigger?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      isOpen ? closeDropdown() : openDropdown();
+    });
+
+    // Close on clicking outside
+    document.addEventListener('click', (e) => {
+      if (!trigger?.contains(e.target) && !menu?.contains(e.target)) {
+        closeDropdown();
+      }
+    });
+
+    // Select Item logic
+    options.forEach((opt) => {
+      opt.addEventListener('click', () => {
+        const value = opt.getAttribute('data-value') || 'project';
+        const isEnglish = document.documentElement.classList.contains('lang-en') || localStorage.getItem('portfolio-lang') === 'en';
+        
+        const label = isEnglish ? opt.getAttribute('data-label-en') : opt.getAttribute('data-label-id');
+        const desc = isEnglish ? opt.getAttribute('data-desc-en') : opt.getAttribute('data-desc-id');
+        const iconSvg = opt.getAttribute('data-icon');
+
+        // Update hidden input for form submission
+        if (hiddenInput) hiddenInput.value = value;
+
+        // Update visual display
+        if (selectedLabel && label) selectedLabel.textContent = label;
+        if (selectedDesc && desc) selectedDesc.textContent = desc;
+        if (selectedIcon && iconSvg) {
+          selectedIcon.innerHTML = `<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">${iconSvg}</svg>`;
+        }
+
+        // Update checkmark indicators
+        options.forEach((o) => {
+          const check = o.querySelector('.check-indicator');
+          if (o === opt) {
+            check?.classList.remove('opacity-0');
+            check?.classList.add('opacity-100');
+          } else {
+            check?.classList.remove('opacity-100');
+            check?.classList.add('opacity-0');
+          }
+        });
+
+        closeDropdown();
+      });
+    });
+
+    // --- 2. FORM SUBMIT SIMULATION & TOAST ---
+    const contactForm = document.getElementById('contact-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const btnText = document.getElementById('btn-text');
+    const btnSpinner = document.getElementById('btn-spinner');
+    const toast = document.getElementById('toast-notification');
+
+    contactForm?.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      if (btnText && btnSpinner && submitBtn) {
+        btnText.classList.add('hidden');
+        btnSpinner.classList.remove('hidden');
+        btnSpinner.classList.add('flex');
+        submitBtn.setAttribute('disabled', 'true');
+        submitBtn.classList.add('opacity-80', 'cursor-not-allowed');
+      }
+
+      setTimeout(() => {
+        if (btnText && btnSpinner && submitBtn) {
+          btnText.classList.remove('hidden');
+          btnSpinner.classList.add('hidden');
+          btnSpinner.classList.remove('flex');
+          submitBtn.removeAttribute('disabled');
+          submitBtn.classList.remove('opacity-80', 'cursor-not-allowed');
+        }
+
+        if (toast) {
+          toast.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
+          toast.classList.add('translate-y-0', 'opacity-100');
+          setTimeout(() => {
+            toast.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
+            toast.classList.remove('translate-y-0', 'opacity-100');
+          }, 4500);
+        }
+
+        contactForm.reset();
+      }, 850);
+    });
+
+    // --- 3. COPY EMAIL ACTION ---
+    const copyEmailBtn = document.getElementById('copy-email-btn');
+    const copyStatus = document.getElementById('copy-status');
+    const emailText = document.getElementById('email-address-text');
+
+    copyEmailBtn?.addEventListener('click', () => {
+      const email = emailText?.innerText?.trim() || 'choirulrizal889@gmail.com';
+      navigator.clipboard.writeText(email).then(() => {
+        if (copyStatus) {
+          copyStatus.innerText = 'Tersalin! ✓';
+          copyStatus.classList.add('text-cyan-400');
+          setTimeout(() => {
+            copyStatus.innerText = 'Salin';
+            copyStatus.classList.remove('text-cyan-400');
+          }, 2000);
+        }
+      });
+    });
+  });
+</script>
