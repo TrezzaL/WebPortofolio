@@ -1,9 +1,10 @@
 ---
 title: "Aplikasi Tabungan Siswa"
-description: "Aplikasi mobile Android untuk mencatat setoran dan mempermudah rekapitulasi saldo tabungan siswa ke pihak Tata Usaha sekolah."
+description: "Aplikasi Android native untuk mencatat transaksi setoran dan penarikan serta mempermudah rekapitulasi buku tabungan siswa ke pihak Tata Usaha sekolah."
 category: "Mobile Game"
+date: "2026-05"
 techStack: ["Android Studio", "Java", "XML"]
-thumbnail: "/assets/projects/tabungan-siswa.webp"
-repoUrl: "https://github.com/TrezzaL/TabunganSiswa"
-demoUrl: ""
+thumbnail: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=800&auto=format&fit=crop"
+repoUrl: "https://github.com/TrezzaL/Aplikasi-Tabungan-Siswa-Android"
+demoUrl: "https://github.com/TrezzaL/Aplikasi-Tabungan-Siswa-Android"
 ---

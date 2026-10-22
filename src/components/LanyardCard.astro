@@ -1,0 +1,97 @@
+---
+interface Props {
+  name?: string;
+  role?: string;
+  photoUrl?: string;
+}
+
+const {
+  name = "Mochammad Choirul Rizal",
+  role = "Software Engineer & Creator",
+  photoUrl = "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=400&auto=format&fit=crop"
+} = Astro.props;
+---
+
+<div class="lanyard-wrapper relative flex flex-col items-center justify-start pointer-events-auto select-none">
+  <!-- Titik Paku / Pengait Atas -->
+  <div class="w-4 h-4 rounded-full bg-zinc-800 border-2 border-zinc-600 shadow-md z-30"></div>
+
+  <!-- Tali Gantungan (Lanyard Strap) -->
+  <div class="lanyard-strap w-3 h-28 bg-gradient-to-b from-cyan-600 via-sky-500 to-blue-600 rounded-sm shadow-inner relative flex justify-center -mt-1 origin-top">
+    <div class="w-0.5 h-full bg-cyan-200/40"></div>
+  </div>
+
+  <!-- Pengait Logam Kartu -->
+  <div class="w-3.5 h-4 bg-zinc-400 border border-zinc-500 rounded-sm -mt-0.5 z-20 shadow-sm"></div>
+
+  <!-- Kartu ID Card Interaktif -->
+  <div 
+    id="interactive-badge" 
+    class="w-56 rounded-2xl bg-zinc-950/90 border border-zinc-800/90 backdrop-blur-xl p-4 shadow-[0_20px_50px_rgba(0,0,0,0.6)] cursor-grab active:cursor-grabbing transition-transform duration-100 ease-out origin-top flex flex-col items-center text-center -mt-1"
+  >
+    <!-- Lubang Gantungan Kartu -->
+    <div class="w-8 h-1.5 rounded-full bg-zinc-900 border border-zinc-700/80 mb-3"></div>
+
+    <!-- Foto Profil -->
+    <div class="relative w-24 h-24 rounded-xl overflow-hidden border-2 border-cyan-500/50 shadow-inner mb-3">
+      <img src={photoUrl} alt={name} class="w-full h-full object-cover pointer-events-none" />
+    </div>
+
+    <!-- Informasi Identitas -->
+    <div class="space-y-0.5">
+      <h3 class="text-sm font-extrabold text-white tracking-tight leading-tight">{name}</h3>
+      <p class="text-[11px] font-mono text-cyan-400">{role}</p>
+      <span class="inline-block text-[9px] uppercase tracking-widest text-zinc-400 bg-zinc-900 px-2 py-0.5 rounded-full border border-zinc-800 mt-2">
+        SMKN 1 Cimahi
+      </span>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const card = document.getElementById('interactive-badge');
+    const strap = document.querySelector('.lanyard-strap');
+    if (!card || !strap) return;
+
+    let isDragging = false;
+    let startX = 0;
+    let currentX = 0;
+    let currentRotation = 0;
+
+    const onPointerDown = (e) => {
+      isDragging = true;
+      startX = e.clientX || (e.touches && e.touches[0].clientX);
+      card.style.transition = 'none';
+      strap.style.transition = 'none';
+    };
+
+    const onPointerMove = (e) => {
+      if (!isDragging) return;
+      const x = e.clientX || (e.touches && e.touches[0].clientX);
+      const deltaX = x - startX;
+      currentRotation = Math.max(Math.min(deltaX * 0.15, 30), -30);
+      currentX = Math.max(Math.min(deltaX * 0.4, 60), -60);
+
+      card.style.transform = `translateX(${currentX}px) rotate(${currentRotation}deg)`;
+      strap.style.transform = `rotate(${currentRotation * 0.6}deg)`;
+    };
+
+    const onPointerUp = () => {
+      if (!isDragging) return;
+      isDragging = false;
+      card.style.transition = 'transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+      strap.style.transition = 'transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+      card.style.transform = 'translateX(0px) rotate(0deg)';
+      strap.style.transform = 'rotate(0deg)';
+    };
+
+    card.addEventListener('mousedown', onPointerDown);
+    window.addEventListener('mousemove', onPointerMove);
+    window.addEventListener('mouseup', onPointerUp);
+
+    card.addEventListener('touchstart', onPointerDown, { passive: true });
+    window.addEventListener('touchmove', onPointerMove, { passive: true });
+    window.addEventListener('touchend', onPointerUp);
+  });
+</script>

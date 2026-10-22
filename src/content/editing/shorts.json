@@ -1,23 +1,47 @@
 [
   {
-    "title": "Minecraft Dynamic Cinematic Shorts",
+    "id": "short-1",
+    "title": "Minecraft Dynamic Cinematic Shorts #1",
     "platform": "YouTube Shorts",
-    "videoEmbedUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    "thumbnail": "/assets/projects/video-minecraft-1.webp",
-    "toolsUsed": ["CapCut PC", "Premiere Pro"]
+    "videoEmbedUrl": "https://www.youtube.com/embed/6i1pQtkdr-E",
+    "thumbnail": "https://img.youtube.com/vi/6i1pQtkdr-E/hqdefault.jpg",
+    "toolsUsed": ["CapCut PC", "Premiere Pro"],
+    "tags": ["Gaming", "Shorts", "Minecraft"]
   },
   {
-    "title": "High-Pace Fast Motion Gaming Edit",
-    "platform": "TikTok",
-    "videoEmbedUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    "thumbnail": "/assets/projects/video-minecraft-2.webp",
-    "toolsUsed": ["CapCut PC", "Premiere Pro"]
+    "id": "short-2",
+    "title": "Fast Motion Creative Gaming Edit",
+    "platform": "Instagram Reels",
+    "videoEmbedUrl": "https://www.instagram.com/reel/DX30kIwNnK9/embed",
+    "thumbnail": "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800&auto=format&fit=crop",
+    "toolsUsed": ["CapCut PC", "Premiere Pro"],
+    "tags": ["Reels", "High-Pace", "Gaming"]
   },
   {
-    "title": "Short-Form Creative Content Simulation",
+    "id": "short-3",
+    "title": "Short-Form High Energy Visuals",
+    "platform": "Instagram Reels",
+    "videoEmbedUrl": "https://www.instagram.com/reel/Da0GncxxKy3/embed",
+    "thumbnail": "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=800&auto=format&fit=crop",
+    "toolsUsed": ["Premiere Pro", "CapCut PC"],
+    "tags": ["Visuals", "Motion", "Reels"]
+  },
+  {
+    "id": "short-4",
+    "title": "Cinematic Motion & Rhythm Sync",
+    "platform": "Instagram Reels",
+    "videoEmbedUrl": "https://www.instagram.com/reel/Ddfo3OCTqlB/embed",
+    "thumbnail": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=800&auto=format&fit=crop",
+    "toolsUsed": ["Premiere Pro", "After Effects"],
+    "tags": ["Cinematic", "Rhythm", "Reels"]
+  },
+  {
+    "id": "short-5",
+    "title": "Minecraft Dynamic Cinematic Shorts #2",
     "platform": "YouTube Shorts",
-    "videoEmbedUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    "thumbnail": "/assets/projects/video-minecraft-3.webp",
-    "toolsUsed": ["Premiere Pro", "CapCut PC"]
+    "videoEmbedUrl": "https://www.youtube.com/embed/APzrd7p94sc",
+    "thumbnail": "https://img.youtube.com/vi/APzrd7p94sc/hqdefault.jpg",
+    "toolsUsed": ["CapCut PC", "Premiere Pro"],
+    "tags": ["Minecraft", "Shorts", "YouTube"]
   }
 ]
