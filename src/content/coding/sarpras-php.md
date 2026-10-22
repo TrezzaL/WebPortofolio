@@ -1,11 +1,9 @@
 ---
-title: "Sistem Peminjaman Sarpras"
-description: "Aplikasi web inventaris dan manajemen peminjaman sarana prasarana sekolah."
+title: "Sistem Peminjaman Sarana & Prasarana"
+description: "Web inventaris sekolah mandiri mencakup perancangan UI, database, katalog ketersediaan aset, sistem peminjaman, serta panel admin verifikasi pengembalian."
 category: "Web App"
-techStack: ["PHP", "Bootstrap", "MySQL"]
-thumbnail: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&auto=format&fit=crop&q=80"
-repoUrl: "https://github.com"
-featured: false
-date: "2026-05"
+techStack: ["PHP Native", "Bootstrap", "MySQL"]
+thumbnail: "/assets/projects/sarpras-php.webp"
+repoUrl: "https://github.com/TrezzaL/sarpras-php"
+demoUrl: ""
 ---
-Web administrasi untuk memonitor status ketersediaan sarana dan riwayat pengembalian barang.

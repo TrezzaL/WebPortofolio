@@ -1,12 +1,9 @@
 ---
-title: "Choi-ATK Stationery E-Commerce"
-description: "Platform e-commerce dan manajemen inventaris alat tulis kantor berbasis web."
+title: "ChoiATK - E-Commerce ATK"
+description: "Platform e-commerce alat tulis kantor berbasis Laravel dengan fitur radius pengantaran 2 km (min. belanja Rp10.000) serta pencatatan kasbon pelanggan terstruktur."
 category: "Web App"
-techStack: ["Laravel", "Tailwind CSS", "MySQL"]
-thumbnail: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=800&auto=format&fit=crop&q=80"
-repoUrl: "https://github.com"
-demoUrl: "https://example.com"
-featured: true
-date: "2026-09"
+techStack: ["Laravel", "PHP", "Tailwind CSS", "MySQL"]
+thumbnail: "/assets/projects/choi-atk.webp"
+repoUrl: "https://github.com/TrezzaL/ChoiATK"
+demoUrl: ""
 ---
-Sistem e-commerce lengkap dengan pencatatan stok barang, transaksi otomatis, dan antarmuka responsif.

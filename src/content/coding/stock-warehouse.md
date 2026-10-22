@@ -1,11 +1,9 @@
 ---
-title: "Warehouse Stock In & Out System"
-description: "Aplikasi desktop manajemen pergudangan untuk kontrol alur barang masuk dan keluar."
+title: "Aplikasi Inventori Gudang"
+description: "Aplikasi desktop GUI berbasis Windows Presentation Foundation (WPF) untuk memantau arus barang masuk dan keluar gudang secara real-time."
 category: "Desktop"
-techStack: ["C#", ".NET", "MySQL"]
-thumbnail: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&auto=format&fit=crop&q=80"
-repoUrl: "https://github.com"
-featured: true
-date: "2026-08"
+techStack: ["C#", "WPF", ".NET", "MySQL"]
+thumbnail: "/assets/projects/stock-warehouse.webp"
+repoUrl: "https://github.com/TrezzaL/WarehouseInventory"
+demoUrl: ""
 ---
-Software desktop untuk mempermudah pencatatan stok logistik secara real-time dan rekapitulasi data akurat.

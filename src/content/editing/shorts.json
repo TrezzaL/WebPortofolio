@@ -1,11 +1,23 @@
 [
   {
-    "id": "sample-short-1",
-    "title": "Gameplay Highlights & Dynamic Pacing",
+    "title": "Minecraft Dynamic Cinematic Shorts",
     "platform": "YouTube Shorts",
     "videoEmbedUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    "thumbnail": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=600&auto=format&fit=crop&q=80",
-    "toolsUsed": ["Premiere Pro", "After Effects"],
-    "tags": ["Gaming", "Fast Paced", "Color Grading"]
+    "thumbnail": "/assets/projects/video-minecraft-1.webp",
+    "toolsUsed": ["CapCut PC", "Premiere Pro"]
+  },
+  {
+    "title": "High-Pace Fast Motion Gaming Edit",
+    "platform": "TikTok",
+    "videoEmbedUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    "thumbnail": "/assets/projects/video-minecraft-2.webp",
+    "toolsUsed": ["CapCut PC", "Premiere Pro"]
+  },
+  {
+    "title": "Short-Form Creative Content Simulation",
+    "platform": "YouTube Shorts",
+    "videoEmbedUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    "thumbnail": "/assets/projects/video-minecraft-3.webp",
+    "toolsUsed": ["Premiere Pro", "CapCut PC"]
   }
 ]
